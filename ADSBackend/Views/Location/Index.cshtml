@@ -1,13 +1,19 @@
-﻿
+﻿@model List<ADSBackend.Models.AdminViewModels.LocationsViewModel>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Admin";
 }
 
+@* To Do:
+    -ViewModel
+    -Database
+    -Fix Width of table columns
+    -For each*@
 
 
 <div class="ibox">
     <div class="ibox-title">
-        <h2>Manage Users</h2>
+        <h2>Manage Locations</h2>
         <p>
             Create
         </p>
@@ -31,11 +37,33 @@
                     <th>
                         Contact Info
                     </th>
-
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        Sample Address
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Latitude)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Longitude)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        Sample Editing Functions
+                    </td>
+                </tr>
+                }
             </tbody>
         </table>
     </div>
