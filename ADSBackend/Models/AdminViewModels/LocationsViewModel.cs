@@ -10,8 +10,9 @@ namespace ADSBackend.Models.AdminViewModels
     {
         public int Id { get; set; }
 
-        [Required]
+        
         [DataType(DataType.EmailAddress)]
+        [Required]
         public string Email { get; set; }
 
         [Display(Name = "Title")]
@@ -28,6 +29,10 @@ namespace ADSBackend.Models.AdminViewModels
 
         [Display(Name = "PhoneNumber")]
         [Required]
-        public float PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
+
+        [Display(Name = "Address")]
+        [Required]
+        public string Address { get; set; }
     }
 }

@@ -16,16 +16,10 @@ namespace ADSBackend.Controllers
     {
 
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<ApplicationRole> _roleManager;
-        private readonly IEmailSender _emailSender;
 
         public LocationController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager, IEmailSender emailSender)
         {
             _context = context;
-            _userManager = userManager;
-            _roleManager = roleManager;
-            _emailSender = emailSender;
         }
 
         public async Task<IActionResult> Index()
@@ -42,6 +36,8 @@ namespace ADSBackend.Controllers
                 Title = "boi",
                 Latitude = 5.0f,
                 Longitude = 7.0f,
+                Address = "1230 blah blah street",
+                PhoneNumber = "123-456-7899",
             }).ToList();
 
 

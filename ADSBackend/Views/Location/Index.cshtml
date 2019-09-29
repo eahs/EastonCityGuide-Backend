@@ -48,7 +48,7 @@
                         @Html.DisplayFor(modelItem => item.Title)
                     </td>
                     <td>
-                        Sample Address
+                        @Html.DisplayFor(modelItem => item.Address)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Latitude)
@@ -58,6 +58,7 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Email)
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
                     </td>
                     <td>
                         Sample Editing Functions
