@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace ADSBackend.Models.AdminViewModels
+namespace ADSBackend.Models
 {
-    public class LocationsViewModel
+    public class Locations
     {
         public int Id { get; set; }
 

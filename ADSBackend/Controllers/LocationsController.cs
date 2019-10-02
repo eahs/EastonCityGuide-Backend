@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ADSBackend.Data;
+using ADSBackend.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ADSBackend.Models;
-using ADSBackend.Models.AdminViewModels;
 
 namespace ADSBackend.Controllers
 {
-    public class LocationsViewModelsController : Controller
+    public class LocationsController : Controller
     {
-        private readonly ADSBackendContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public LocationsViewModelsController(ADSBackendContext context)
+        public LocationsController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -22,7 +19,7 @@ namespace ADSBackend.Controllers
         // GET: LocationsViewModels
         public async Task<IActionResult> Index()
         {
-            return View(await _context.LocationsViewModel.ToListAsync());
+            return View(await _context.Locations.ToListAsync());
         }
 
         // GET: LocationsViewModels/Details/5
@@ -33,7 +30,7 @@ namespace ADSBackend.Controllers
                 return NotFound();
             }
 
-            var locationsViewModel = await _context.LocationsViewModel
+            var locationsViewModel = await _context.Locations
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (locationsViewModel == null)
             {
@@ -54,7 +51,7 @@ namespace ADSBackend.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Email,Title,Latitude,Longitude,PhoneNumber,Address")] LocationsViewModel locationsViewModel)
+        public async Task<IActionResult> Create([Bind("Id,Email,Title,Latitude,Longitude,PhoneNumber,Address")] Locations locationsViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +70,7 @@ namespace ADSBackend.Controllers
                 return NotFound();
             }
 
-            var locationsViewModel = await _context.LocationsViewModel.FindAsync(id);
+            var locationsViewModel = await _context.Locations.FindAsync(id);
             if (locationsViewModel == null)
             {
                 return NotFound();
@@ -86,7 +83,7 @@ namespace ADSBackend.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Email,Title,Latitude,Longitude,PhoneNumber,Address")] LocationsViewModel locationsViewModel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Email,Title,Latitude,Longitude,PhoneNumber,Address")] Locations locationsViewModel)
         {
             if (id != locationsViewModel.Id)
             {
@@ -124,7 +121,7 @@ namespace ADSBackend.Controllers
                 return NotFound();
             }
 
-            var locationsViewModel = await _context.LocationsViewModel
+            var locationsViewModel = await _context.Locations
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (locationsViewModel == null)
             {
@@ -139,15 +136,15 @@ namespace ADSBackend.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var locationsViewModel = await _context.LocationsViewModel.FindAsync(id);
-            _context.LocationsViewModel.Remove(locationsViewModel);
+            var locationsViewModel = await _context.Locations.FindAsync(id);
+            _context.Locations.Remove(locationsViewModel);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool LocationsViewModelExists(int id)
         {
-            return _context.LocationsViewModel.Any(e => e.Id == id);
+            return _context.Locations.Any(e => e.Id == id);
         }
     }
 }
