@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Tools\\GitHub Repositories\\EastonCityGuide-Backend\\ADSBackend\\ADSBackend.csproj": {}
+    "C:\\Users\\eahscs\\Documents\\EastonCityGuide-Backend\\ADSBackend\\ADSBackend.csproj": {}
   },
   "projects": {
-    "D:\\Tools\\GitHub Repositories\\EastonCityGuide-Backend\\ADSBackend\\ADSBackend.csproj": {
+    "C:\\Users\\eahscs\\Documents\\EastonCityGuide-Backend\\ADSBackend\\ADSBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Tools\\GitHub Repositories\\EastonCityGuide-Backend\\ADSBackend\\ADSBackend.csproj",
+        "projectUniqueName": "C:\\Users\\eahscs\\Documents\\EastonCityGuide-Backend\\ADSBackend\\ADSBackend.csproj",
         "projectName": "ADSBackend",
-        "projectPath": "D:\\Tools\\GitHub Repositories\\EastonCityGuide-Backend\\ADSBackend\\ADSBackend.csproj",
-        "packagesPath": "C:\\Users\\tajvi\\.nuget\\packages\\",
-        "outputPath": "D:\\Tools\\GitHub Repositories\\EastonCityGuide-Backend\\ADSBackend\\obj\\",
+        "projectPath": "C:\\Users\\eahscs\\Documents\\EastonCityGuide-Backend\\ADSBackend\\ADSBackend.csproj",
+        "packagesPath": "C:\\Users\\eahscs\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eahscs\\Documents\\EastonCityGuide-Backend\\ADSBackend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\",
-          "D:\\Recent_Downloads\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\tajvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\eahscs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
@@ -84,7 +82,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "D:\\Recent_Downloads\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -27,7 +27,7 @@ namespace ADSBackend.Models.AdminViewModels
         [Required]
         public float Longitude { get; set; }
 
-        [Display(Name = "PhoneNumber")]
+        [Display(Name = "Phone Number")]
         [Required]
         public string PhoneNumber { get; set; }
 
