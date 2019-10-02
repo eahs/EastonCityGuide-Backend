@@ -65,4 +65,8 @@ D:\Tools\GitHub Repositories\EastonCityGuide-Backend\ADSBackend\obj\Debug\netcor
 D:\Tools\GitHub Repositories\EastonCityGuide-Backend\ADSBackend\obj\Debug\netcoreapp2.2\ADSBackend.dll
 D:\Tools\GitHub Repositories\EastonCityGuide-Backend\ADSBackend\obj\Debug\netcoreapp2.2\ADSBackend.pdb
 D:\Tools\GitHub Repositories\EastonCityGuide-Backend\ADSBackend\obj\Debug\netcoreapp2.2\ADSBackend.csproj.CopyComplete
-D:\Tools\GitHub Repositories\EastonCityGuide-Backend\ADSBackend\obj\Debug\netcoreapp2.2\Razor\Views\Location\Index.cshtml.g.cs
+D:\Tools\GitHub Repositories\EastonCityGuide-Backend\ADSBackend\obj\Debug\netcoreapp2.2\Razor\Views\LocationsViewModels\Create.cshtml.g.cs
+D:\Tools\GitHub Repositories\EastonCityGuide-Backend\ADSBackend\obj\Debug\netcoreapp2.2\Razor\Views\LocationsViewModels\Delete.cshtml.g.cs
+D:\Tools\GitHub Repositories\EastonCityGuide-Backend\ADSBackend\obj\Debug\netcoreapp2.2\Razor\Views\LocationsViewModels\Details.cshtml.g.cs
+D:\Tools\GitHub Repositories\EastonCityGuide-Backend\ADSBackend\obj\Debug\netcoreapp2.2\Razor\Views\LocationsViewModels\Edit.cshtml.g.cs
+D:\Tools\GitHub Repositories\EastonCityGuide-Backend\ADSBackend\obj\Debug\netcoreapp2.2\Razor\Views\LocationsViewModels\Index.cshtml.g.cs
