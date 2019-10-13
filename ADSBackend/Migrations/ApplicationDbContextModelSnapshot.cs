@@ -31,6 +31,30 @@ namespace ADSBackend.Migrations
                     b.ToTable("ConfigurationItem");
                 });
 
+            modelBuilder.Entity("ADSBackend.Models.Events", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .IsRequired();
+
+                    b.Property<float>("Date");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<string>("Title")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Events");
+                });
+
             modelBuilder.Entity("ADSBackend.Models.Identity.ApplicationRole", b =>
                 {
                     b.Property<int>("Id")
