@@ -43,10 +43,7 @@ namespace ADSBackend.Migrations
                     b.Property<string>("Date")
                         .IsRequired();
 
-                    b.Property<string>("Description");
-
-                    b.Property<string>("Email")
-                        .IsRequired();
+                    b.Property<string>("Descripition");
 
                     b.Property<string>("Title")
                         .IsRequired();
@@ -164,6 +161,17 @@ namespace ADSBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Locations");
+                });
+
+            modelBuilder.Entity("ADSBackend.Models.Sample", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sample");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

@@ -10,17 +10,11 @@ namespace ADSBackend.Models
     {
         public int Id { get; set; }
 
-
-        [DataType(DataType.EmailAddress)]
-        [Required]
-        public string Email { get; set; }
-
-        [Display(Name = "Title")]
         [Required]
         public string Title { get; set; }
 
         [DataType(DataType.DateTime)]
-        [Display(Name = "Date")]
+        [Display(Name = "date")]
         [Required]
         public string Date { get; set; }
 
@@ -29,6 +23,6 @@ namespace ADSBackend.Models
         public string Address { get; set; }
 
         [Display(Name = "Description")]
-        public string Description { get; set; }
+        public string Descripition { get; set; }
     }
 }
