@@ -22,7 +22,7 @@ namespace ADSBackend.Models
         [DataType(DataType.DateTime)]
         [Display(Name = "Date")]
         [Required]
-        public float Date { get; set; }
+        public string Date { get; set; }
 
         [Display(Name = "Address")]
         [Required]

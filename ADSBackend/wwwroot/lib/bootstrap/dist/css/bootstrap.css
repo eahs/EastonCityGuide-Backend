@@ -3835,6 +3835,7 @@ tbody.collapse.in {
   width: 100%;
   margin-bottom: 0;
 }
+
 .input-group .form-control:focus {
   z-index: 3;
 }
