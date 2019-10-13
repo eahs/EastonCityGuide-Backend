@@ -28,7 +28,7 @@ namespace ADSBackend.Models
         [Required]
         public string Address { get; set; }
 
-        [Display(Name = "Address")]
+        [Display(Name = "Description")]
         public string Description { get; set; }
     }
 }
