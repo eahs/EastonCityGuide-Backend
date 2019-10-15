@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ADSBackend.Migrations
@@ -14,7 +15,7 @@ namespace ADSBackend.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(nullable: false),
-                    Date = table.Column<string>(nullable: false),
+                    Date = table.Column<DateTime>(nullable: false),
                     Address = table.Column<string>(nullable: false),
                     Descripition = table.Column<string>(nullable: true)
                 },

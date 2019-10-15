@@ -14,9 +14,10 @@ namespace ADSBackend.Models
         public string Title { get; set; }
 
         [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yy}", ApplyFormatInEditMode = true)]
         [Display(Name = "date")]
         [Required]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         [Display(Name = "Address")]
         [Required]

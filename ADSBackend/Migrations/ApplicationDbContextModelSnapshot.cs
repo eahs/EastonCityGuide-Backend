@@ -40,8 +40,7 @@ namespace ADSBackend.Migrations
                     b.Property<string>("Address")
                         .IsRequired();
 
-                    b.Property<string>("Date")
-                        .IsRequired();
+                    b.Property<DateTime>("Date");
 
                     b.Property<string>("Descripition");
 

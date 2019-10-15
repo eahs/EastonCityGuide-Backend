@@ -22,6 +22,8 @@
                 @Html.DisplayNameFor(model => model.Address)
             </th>
             <th>
+                @Html.EditorFor(model => model.Descripition,
+                new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                 @Html.DisplayNameFor(model => model.Descripition)
             </th>
             <th></th>

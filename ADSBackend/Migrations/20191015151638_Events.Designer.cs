@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ADSBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191013163914_Events")]
+    [Migration("20191015151638_Events")]
     partial class Events
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,8 +42,7 @@ namespace ADSBackend.Migrations
                     b.Property<string>("Address")
                         .IsRequired();
 
-                    b.Property<string>("Date")
-                        .IsRequired();
+                    b.Property<DateTime>("Date");
 
                     b.Property<string>("Descripition");
 
