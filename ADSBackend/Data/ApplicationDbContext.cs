@@ -26,6 +26,5 @@ namespace ADSBackend.Data
 
         public DbSet<ADSBackend.Models.Events> Events { get; set; }
 
-        public DbSet<ADSBackend.Models.Sample> Sample { get; set; }
     }
 }
