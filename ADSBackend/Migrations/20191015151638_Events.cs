@@ -17,7 +17,7 @@ namespace ADSBackend.Migrations
                     Title = table.Column<string>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false),
                     Address = table.Column<string>(nullable: false),
-                    Descripition = table.Column<string>(nullable: true)
+                    Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

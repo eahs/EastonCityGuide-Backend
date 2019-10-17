@@ -24,6 +24,6 @@ namespace ADSBackend.Models
         public string Address { get; set; }
 
         [Display(Name = "Description")]
-        public string Descripition { get; set; }
+        public string Description { get; set; }
     }
 }
