@@ -7,12 +7,15 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ADSBackend.Data;
 using ADSBackend.Models;
+using Microsoft.AspNetCore.Identity;
+using ADSBackend.Models.Identity;
 
 namespace ADSBackend.Controllers
 {
     public class EventsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<Locations> userManager;
 
         public EventsController(ApplicationDbContext context)
         {
@@ -44,27 +47,39 @@ namespace ADSBackend.Controllers
         }
 
         // GET: Events/Create
+        
         public IActionResult Create()
         {
             return View();
         }
-
+        
         // POST: Events/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Date,Address,Description")] Events events)
         {
             if (ModelState.IsValid)
             {
+                var newLocation = new Locations
+                {
+                    Address = events.Address,
+                    Title = events.Title,
+                    Latitude = 0,
+                    Longitude = 0,
+                    PhoneNumber = null
+                };
+
                 _context.Add(events);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(events);
         }
-
+        
         // GET: Events/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -119,6 +134,7 @@ namespace ADSBackend.Controllers
         // GET: Events/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            
             if (id == null)
             {
                 return NotFound();
