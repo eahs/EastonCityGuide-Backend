@@ -1,16 +1,6 @@
 ﻿@{
     Layout = "/Views/Shared/_Layout.cshtml";
-
-
-
 }
-
-@using System.Web.Optimization
-
-@Styles.Render("~/Content/css")
-@Styles.Render("~/Content/fullcalendarcss")
-@Scripts.Render("~/bundles/modernizr")
-
 
 <div class="ibox">
     <div class="ibox-title">
@@ -29,10 +19,6 @@
     </div>
 </div>
 
-
-
 @section Scripts {
     @RenderSection("Scripts", required: false)
-
-
 }
