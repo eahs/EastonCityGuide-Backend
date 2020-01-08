@@ -1,4 +1,5 @@
-﻿using ADSBackend.Models;
+﻿using System;
+using ADSBackend.Models;
 using ADSBackend.Models.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -26,5 +27,9 @@ namespace ADSBackend.Data
 
         public DbSet<ADSBackend.Models.Events> Events { get; set; }
 
+        internal Locations Find(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

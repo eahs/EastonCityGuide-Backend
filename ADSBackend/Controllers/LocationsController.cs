@@ -3,7 +3,9 @@ using ADSBackend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web.Http;
 
 namespace ADSBackend.Controllers
 {
@@ -49,7 +51,7 @@ namespace ADSBackend.Controllers
         // POST: LocationsViewModels/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Email,Title,Latitude,Longitude,PhoneNumber,Address")] Locations locationsViewModel)
         {
@@ -81,7 +83,7 @@ namespace ADSBackend.Controllers
         // POST: LocationsViewModels/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Email,Title,Latitude,Longitude,PhoneNumber,Address")] Locations locationsViewModel)
         {
@@ -132,7 +134,7 @@ namespace ADSBackend.Controllers
         }
 
         // POST: LocationsViewModels/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [System.Web.Http.HttpPost, System.Web.Http.ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
@@ -146,5 +148,23 @@ namespace ADSBackend.Controllers
         {
             return _context.Locations.Any(e => e.Id == id);
         }
+
+        /*
+        //api//Locations/1
+        public IHttpActionResult GetLocation(int id)
+        {
+            var temp = _context.Locations.ToList();
+            return Ok(temp);
+            //return temp(id);
+        }
+        */
+
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("api/meme")]
+        public string TestMethod()
+        {
+            return "Check";
+        }
+
     }
 }
