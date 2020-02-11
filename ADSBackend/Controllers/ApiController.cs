@@ -1,4 +1,6 @@
-﻿using ADSBackend.Models.ApiModels;
+﻿using ADSBackend.Data;
+using ADSBackend.Models;
+using ADSBackend.Models.ApiModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,7 @@ namespace ADSBackend.Controllers
     {
         private readonly Services.Configuration Configuration;
         private readonly Services.Cache _cache;
+        private readonly ApplicationDbContext _context;
 
         public ApiController(Services.Configuration configuration, Services.Cache cache)
         {
@@ -20,21 +23,24 @@ namespace ADSBackend.Controllers
             _cache = cache;
         }
 
-        // GET: api/News
-        [HttpGet("News")]
-        public async Task<List<NewsFeedItem>> GetNewsFeed()
+        // GET: api/Locations
+        [HttpGet("Locations")]
+        public async Task<List<Locations>> GetLocations()
         {
-            var newsUrl = new Uri("https://www.eastonsd.org/apps/news/news_rss.jsp");
 
-            string sourceUrl = newsUrl.GetLeftPart(UriPartial.Authority);
-            string endpoint = newsUrl.PathAndQuery;
+            var locations = await _context.Locations.ToListAsync();
 
-            Task<List<NewsFeedItem>> fetchNewsFromSource() => Util.RSS.GetNewsFeed(sourceUrl, endpoint);
+            return locations;
+            /*
+            if (await IsAuthorized() == null)
+                return new List<Officer>();
 
-            var feedItems = await _cache.GetAsync("RSS", fetchNewsFromSource, TimeSpan.FromMinutes(5));
-            return feedItems.OrderByDescending(x => x.PublishDate).ToList();
+            if (level == null)
+                return await _context.Officer.OrderBy(x => x.Order).ToListAsync();
+
+            return await _context.Officer.Where(o => o.Level == level).OrderBy(x => x.Order).ToListAsync();
+            */
         }
-
         // GET: api/Config
         [HttpGet("Config")]
         public ConfigResponse GetConfig()
