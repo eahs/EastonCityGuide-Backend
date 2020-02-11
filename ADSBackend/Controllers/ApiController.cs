@@ -2,6 +2,7 @@
 using ADSBackend.Models;
 using ADSBackend.Models.ApiModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,16 +32,18 @@ namespace ADSBackend.Controllers
             var locations = await _context.Locations.ToListAsync();
 
             return locations;
-            /*
-            if (await IsAuthorized() == null)
-                return new List<Officer>();
-
-            if (level == null)
-                return await _context.Officer.OrderBy(x => x.Order).ToListAsync();
-
-            return await _context.Officer.Where(o => o.Level == level).OrderBy(x => x.Order).ToListAsync();
-            */
         }
+
+        // Get: api/Events
+        [HttpGet("Events")]
+        public async Task<List<Events>> GetEvents()
+        {
+
+            var events = await _context.Events.ToListAsync();
+
+            return events;
+        }
+
         // GET: api/Config
         [HttpGet("Config")]
         public ConfigResponse GetConfig()
@@ -48,5 +51,7 @@ namespace ADSBackend.Controllers
             // TODO: extend this object to include some configuration items
             return new ConfigResponse();
         }
+
+
     }
 }
